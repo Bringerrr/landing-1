@@ -37,6 +37,76 @@
   }
 }
 
+@mixin h1-60-60 {
+  font-family: Opensans-extrabold, sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+@mixin h2-32-46 {
+  font-family: Opensans-extrabold, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 46px;
+}
+
+@mixin h3-24-33 {
+  font-family: Opensans-bold, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+@mixin subtitle-26-37 {
+  font-family: Opensans-normal, sans-serif;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 37px;
+}
+
+@mixin subtitle-24-33 {
+  font-family: Opensans-normal, sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+@mixin content-24-33 {
+  font-family: Opensans-normal, sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+@mixin content-18-32 {
+  font-family: Opensans-normal, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+@mixin content-18-25 {
+  font-family: Opensans-normal, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+@mixin footer-18-25 {
+  font-family: Opensans-semibold, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+@mixin footer-14-25 {
+  font-family: Opensans-semibold, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 25px;
+}
+
 //Placeholders
 //Usage:
 //@include placeholder;
@@ -47,3 +117,5 @@
   ::-moz-placeholder          {@content}
   :-ms-input-placeholder      {@content}
 }
+
+
