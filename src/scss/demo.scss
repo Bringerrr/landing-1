@@ -22,6 +22,7 @@ html{
   justify-content: center;
   padding: 16px 24px;
   border-radius: 4px;
+  cursor: pointer;
 
   &.__default{
     background: #AAF4EB80;
@@ -70,8 +71,6 @@ html{
   }
 }
 
-
-
 .inputDefault{
   @include subtitle-24-33;
   border: 1px solid #4AD4CB;
@@ -108,8 +107,6 @@ html{
   }
 }
 
-
-
 // main section
 
 .mainSection{
@@ -118,7 +115,7 @@ html{
   margin-bottom: 248px;
   background: linear-gradient(90deg, rgba(150, 251, 196, 0.2) 0%, rgba(249, 245, 134, 0.2) 100%);
 
-  .header{
+  .headerNav{
     margin-bottom: 160px;
 
     .naviagtion{
@@ -130,17 +127,52 @@ html{
       .navBlock{
         display: flex;
         align-items: center;
+        width: 50%;
         
-        img{
-          margin-right: 150px;
-        } 
 
-        .first{
-          margin-right: 105px;
+        & > span {
+          flex: 1 1;
         }
+
+        &.__left{
+          max-width: 600px;
+          .navLink{
+            text-align: right;
+          }
+
+          .first{
+            margin-left: 40px;
+          }
+        }
+        
+        &.__right{
+          display: flex;
+          justify-content: flex-end;
+          max-width: 250px;
+
+          .first{
+            margin-right: 1;
+          }
+
+          .burger{
+            display: none;
+          }
+        }
+
       }
+      
+    @media (max-width: 1024px) {
+      span, .button{
+        display: none;
+      }
+
+      .burger{
+        display: block !important;
+      }
+    }
   
     }
+
   }
 
   .mainBlock{
@@ -174,6 +206,7 @@ html{
     }
 
     .image{
+      display: none;
       position: absolute;
       top: 0;
       &.__right{
@@ -182,7 +215,30 @@ html{
       &.__main{
         top: -62px;
         right: $desctopPadding;
+
+        @media (max-width: 1300px) {
+          top: auto;
+          bottom: 0;
+          img{
+            width: 550px;
+          } 
+        }
+
+        @media (max-width: 1200px) {
+          img{
+            width: 450px;
+          } 
+        }
       }
+
+    }
+
+    &.animate{
+      .image{
+        display: inline-block;
+        @include fadeInLeftAnimation;
+      }
+
     }
   }
 
@@ -209,10 +265,7 @@ html{
 
     .image{
       position: absolute;
-  
-      img{
-        width: 100%;
-      }
+      
     }
   
     &:before{
@@ -221,6 +274,7 @@ html{
       position: absolute;
       height: 520px;
       width: 840px;
+      max-width: 100%;
       display: block;
       opacity: 0.2;
     }
@@ -232,6 +286,19 @@ html{
 
       .image{
         left: -23px;
+
+        @media (max-width: 1300px) {
+          top: -13px;
+          img{
+            width: 450px;
+          } 
+        }
+        @media (max-width: 1100px) {
+          top: -10px;
+          img{
+            width: 400px;
+          } 
+        }
       }
 
       &:before{
@@ -244,6 +311,13 @@ html{
       .image{
         top: -93px;
         right: 65px;
+
+        @media (max-width: 1300px) {
+          top: -33px;
+          img{
+            width: 320px;
+          } 
+        }
       }
 
       &:before{
@@ -270,6 +344,13 @@ html{
           margin-right: 24px;
         }
       }
+
+      @media (max-width: 1080px) {
+        gap: 48px;
+        li{
+          width: 100%;
+        }
+      }
     }
     
   }
@@ -286,7 +367,10 @@ html{
 
     .scrollSticky {
       height: 580px;
+      width: 50%;
+      max-width: 680px;
       top: 200px;
+
       position: sticky;
 
       .scrollBackground {
@@ -295,6 +379,7 @@ html{
         height: 520px;
         width: 840px;
         display: block;
+        position: absolute;
         opacity: 0.2;
         left: 63px;
         background: linear-gradient(90deg, #6DC8C2 0%, #F9F586 100%);
@@ -303,12 +388,20 @@ html{
 
     .image{
       position: absolute;
-      left: 0;
+      left: -83px;
+      top: -79px;
+      z-index: 1;
     }
 
     .__scrollTextContainer {
+      // left: -150px;
+      position: relative;
       padding-top: 140px;
-      // position: absolute;
+      padding-bottom: 140px;
+
+      @media (max-width: 1400px) {
+        // left: -100px;
+      }
 
       .scrollBlock{
         min-height: 400px;

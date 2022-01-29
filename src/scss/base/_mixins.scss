@@ -114,6 +114,18 @@
   line-height: 25px;
 }
 
+@keyframes fadeIn {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+}
+@mixin fadeInLeftAnimation {
+  animation: fadeIn 6s;
+}
+
 
 //Placeholders
 //Usage:

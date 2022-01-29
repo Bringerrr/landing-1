@@ -1,0 +1,253 @@
+.modalOpened{
+    // background-color: red;
+    .modalContainer{
+        display: block;
+    }
+}
+
+@keyframes fadeOut {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes drawOut {
+    from{
+        transform: translateX(100%);
+    }
+
+    to{
+        transform: translateX(0);
+    }
+}
+
+.modalContainer{
+    display: none;
+    // display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .back{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(51, 51, 51, 0.7);
+    }
+
+    &.opened{
+        .modalWrapper{
+            display: flex;
+        }
+    }
+
+    .modalWrapper{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        .content{
+            position: relative;
+            width: 100%;
+            max-width: 806px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 64px 20px;
+
+            animation: fadeOut 0.4s;
+
+            background-color: #fff;
+            background-image: url('../images/design/vase.svg'), url('../images/design/modalGirl.svg');
+            background-position: left 60px , right 0px;
+            background-repeat: no-repeat;
+
+            
+            .logo{
+                width: 300px;
+                margin-bottom: 48px;
+            }
+
+            .close{
+                position: absolute;
+                top: 32px;
+                right: 32px;
+                cursor: pointer;
+            }
+
+            .modalForm{
+                height: auto;
+                flex-direction: column;
+                width: 100%;
+                max-width: 600px;
+                margin-bottom: 64px;
+
+                .passwordInput{
+                    position: relative;
+                    span{
+                        @include content-18-25;
+                        color:#6DAFA7;
+                        position: absolute;
+                        right: 20px;
+                        top: 32px;
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                    }
+                }
+
+                input{
+                    margin-bottom: 24px;
+                    width: 100%;
+                }
+
+                .button{
+                    width: 110px;
+                }
+            }
+
+            .linkForm{
+                @include content-18-25;
+            }
+
+        }
+    }
+
+    &.drawerOpened{
+        .drawerWrapper{
+            display: flex;
+        }
+    }
+
+    @media screen {
+        
+    }
+
+    .drawerWrapper{
+        height: 100%;
+        position: absolute;
+        right: 0px;
+        width: 100%;
+        max-width: 355px;
+        animation: drawOut 0.4s;
+        z-index: 2;
+
+        .drawerContainer{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+     
+            .drawerContent{
+                position: relative;
+                max-width: 355px;
+                width: 100%;
+                height: 100vh;
+                background-color: #fff;
+
+                * {
+                    scrollbar-width: thin;
+                    scrollbar-color: rgba(74, 212, 203, 0.2) transparent;
+                  }
+                  
+                  *::-webkit-scrollbar {
+                    width: 12px;
+                  }
+                  
+                  *::-webkit-scrollbar-track {
+                    background: transparent;
+                  }
+                  
+                  *::-webkit-scrollbar-thumb {
+                    background-color: rgba(74, 212, 203, 0.2);
+                    border-radius: 20px;
+                    border: 3px solid transparent;
+                  }
+
+
+
+                .drawerHeader{
+                    height: 52px;
+                    padding: 16px 20px;
+                    .close{
+                        cursor: pointer;
+                        position: absolute;
+                        right: 20px;
+                        top: 23px;
+                    }
+
+                    .logo{
+                        width: 144px;
+                        margin-bottom: 67px;
+                    }
+
+                }
+
+                .drawerDisplay{
+                    height: calc(100vh - 52px);
+                    overflow-y: scroll;
+                    padding: 16px 20px;
+
+                    
+                    .drawerList{
+                        margin-top: 40px;
+                        margin-bottom: 100px;
+                        li{
+                            margin-bottom: 32px;
+                            @include content-18-25;
+                        }
+                    }
+    
+                    .underline{
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(90deg, #6DC8C2 0%, #F9F586 100%);
+                        opacity: 0.3;
+                        margin-bottom: 48px;
+                    }
+    
+                    .button{
+                        width: 100%;
+                        margin-bottom: 48px;
+                    }
+    
+                    .drawerInfo{
+                        li{
+                            margin-bottom: 32px;
+                            display: flex;
+                            img{
+                                margin-right: 11px;
+                            }
+    
+                        }
+                    }
+    
+                    .drawerSocials{
+                        display: flex;
+                        gap: 16px;
+                        margin-bottom: 100px;
+                    }
+    
+                    .drawerCopyright{
+                        @include  footer-14-25;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+
+}
+
