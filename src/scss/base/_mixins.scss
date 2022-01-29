@@ -107,6 +107,14 @@
   line-height: 25px;
 }
 
+@mixin link-18-25 {
+  font-family: Opensans-extrabold, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
 //Placeholders
 //Usage:
 //@include placeholder;

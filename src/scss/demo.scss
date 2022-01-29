@@ -8,10 +8,7 @@ html{
   position: relative;
   width: 100%;
   max-width: 1640px;
-
-  @media (min-width: 1921px) { 
-    margin: 0 auto;
-  }
+  margin: 0 auto;
 
    @media (max-width: 1920px) { 
       padding: 0 $desctopPadding;
@@ -19,28 +16,68 @@ html{
 }
 
 .button{
+  @include content-18-25;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
   border-radius: 4px;
 
-
   &.__default{
     background: #AAF4EB80;
     border: 1px solid #258B98;
+    
+    &:hover{
+      background-color: #AAF4EB;
+    }
   } 
+  
   &.__primary{
     color: #fff;
     background: #258B98;
     border: 1px solid #258B98;
+    
+    &:hover{
+      background-color: #0C606A;
+    }
+
+    &:active{
+      background-color: #00424A;
+    }
   }
 }
 
+.link{
+  color:#258B98;
+  border-bottom: 1px solid #258B98;
+
+  &:hover{
+    color: #0C606A;
+    border-bottom: 1px solid #0C606A;
+  }
+}
+
+.navLink{
+  display: inline-block;
+  @include content-18-25;
+  cursor: pointer;
+  padding: 7px 14px 9px;
+  border-radius: 4px;
+
+  &:hover{
+    background-color: rgba(255, 231, 121, 0.5);
+    @include link-18-25;
+  }
+}
+
+
+
 .inputDefault{
+  @include subtitle-24-33;
   border: 1px solid #4AD4CB;
   box-sizing: border-box;
   border-radius: 6px;
+  background-color: #fff;
 }
 
 .formSubscription{
@@ -58,6 +95,19 @@ html{
     padding: 20px 24px;
   }
 }
+
+.textBlockSecond{
+  width: 53%;
+  .header{
+    @include h2-32-46;
+    margin-bottom: 32px;
+  }
+
+  .subtitle{
+    @include subtitle-26-37;
+  }
+}
+
 
 
 // main section
@@ -148,25 +198,15 @@ html{
   }
 }
 
+// second section ----------------
+
 .secondSection{
   .block{
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
-  
-    .textBlockSecond{
-      width: 53%;
-      .header{
-        @include h2-32-46;
-        margin-bottom: 32px;
-      }
-  
-      .subtitle{
-        @include subtitle-26-37;
-      }
-    }
-  
+
     .image{
       position: absolute;
   
@@ -176,11 +216,11 @@ html{
     }
   
     &:before{
+      z-index: -1;
       content: "";
       position: absolute;
       height: 520px;
       width: 840px;
-
       display: block;
       opacity: 0.2;
     }
@@ -215,6 +255,8 @@ html{
 
   .listContainer{
     @include h3-24-33;
+    margin-bottom: 200px;
+
     ul {
       display: flex;
       gap: 100px;
@@ -233,3 +275,294 @@ html{
   }
 }
 
+// scroll section --------------
+
+.scrollSection{
+  margin-bottom: 240px;
+  .block {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    .scrollSticky {
+      height: 580px;
+      top: 200px;
+      position: sticky;
+
+      .scrollBackground {
+        z-index: -1;
+        top: 0;
+        height: 520px;
+        width: 840px;
+        display: block;
+        opacity: 0.2;
+        left: 63px;
+        background: linear-gradient(90deg, #6DC8C2 0%, #F9F586 100%);
+      }
+    }
+
+    .image{
+      position: absolute;
+      left: 0;
+    }
+
+    .__scrollTextContainer {
+      padding-top: 140px;
+      // position: absolute;
+
+      .scrollBlock{
+        min-height: 400px;
+      }
+    }
+
+
+  }
+}
+
+
+// reviews -----------------------------------
+
+.reviews{
+  margin-bottom: 320px;
+
+  .reviewBlocks{
+    position: relative;
+
+    .reviewHeader{
+      @include h2-32-46;
+    }
+
+    
+    .reviewBlockContainer{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+
+    .reviewBlock{
+      padding: 48px 32px;
+      position: relative;
+      max-width: 370px;
+
+      .reviewText{
+        display: block;
+        @include content-18-25;
+
+      }
+
+      .reviewPs{
+        display: block;
+        @include content-18-25;
+        color: #000;
+        opacity: 0.5;
+      }
+
+      .reviewImg{
+        position: absolute;
+        filter: drop-shadow(0px 13px 20px rgba(0, 0, 0, 0.15));
+      }
+
+      &.__review1{
+        height: 600px;
+        background: rgba(255, 231, 121,0.342);
+        top: 108px;
+
+        .reviewText{
+          margin-bottom: 50px;
+        }
+
+        .reviewImg{
+          bottom: 25px;
+          right: -20px;
+        }
+      }
+
+      &.__review2{
+        height: 454px;
+        background: rgba(109, 200, 194, 0.342);
+        top: 300px;
+
+        .reviewText{
+          margin-top: 130px;
+          margin-bottom: 50px;
+        }
+
+        .reviewImg{
+          top: -98px;
+          right: 10px;
+        }
+      }
+
+      &.__review3{
+        height: 560px;
+        background: rgba(184, 216, 199, 0.342);
+        top: -86px;
+
+        .reviewText{
+          margin-bottom: 50px;
+        }
+
+        .reviewImg{
+          bottom: -61px;
+          left: -16px;
+        }
+      }
+    }
+  }
+}
+
+// getStarted =============================================
+
+.getStarted {
+  margin-bottom: 200px;
+
+  .block{
+    position: relative;
+    height: 520px;
+    display: flex;
+    justify-content: flex-end;
+
+    .formBlock{
+      position: relative;
+      height: 520px;
+      width: 53%;
+      right: 0;
+      .content{
+        max-width: 490px;
+
+        .header{
+          @include h2-32-46;
+          margin-top: 57px;
+          margin-bottom: 64px;
+        }
+        .title{
+          @include h3-24-33;
+          display: block;
+          margin-bottom: 18px;
+        }
+      }
+
+    }
+
+    .image{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:before{
+      z-index: -1;
+      content: "";
+      position: absolute;
+      height: 520px;
+      width: 840px;
+      display: block;
+      opacity: 0.2;
+      background: #4AD4CB;
+      right:45px
+    }
+
+  }
+}
+
+.footer{
+
+  .upper{
+    background: rgba(199, 184, 248,0.342);
+    padding: 23px 0;
+    @include subtitle-24-33;
+  }
+
+  .lower {
+    background-color: #333333;
+    .content{
+      padding: 58px 0 60px;
+   
+      .upperContent{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        .imagesContainer{
+          .socials{
+            margin-top: 32px;
+            margin-bottom: 40px;
+            display: flex;
+            & > * {
+              margin-right: 18px;
+            }
+          }
+        }
+
+        .navigation{
+          margin-top: 18px;
+          @include footer-18-25;
+          color: #fff;
+
+          span:nth-child(n):not(:nth-child(1)){
+            margin-left: 84px;
+          }
+        }
+
+        .contacts{
+          @include content-18-25;
+          color: #fff;
+          margin-top: 10px;
+
+          span{
+            display: flex;
+            &:nth-child(n):not(:nth-child(1)){
+              margin-top: 18px;
+            }
+            img{
+              margin-right: 11px;
+              
+            }
+          }
+        }
+
+        &:after{
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          background: linear-gradient(90deg, #6DC8C2 0%, #F9F586 100%);
+          opacity: 0.3;
+        }
+      }
+
+      .lowerContent{
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+
+        .navigation{
+          font-size: 14px;
+          color: #fff;
+          display: flex;
+          opacity: 0.8;
+          margin-left: 20px;
+
+          span{
+            cursor: pointer;
+
+            &:nth-child(n):not(:nth-child(1)){
+              margin-left: 71px;
+            }
+
+          }
+        }
+
+        .copyright{
+          font-size: 14px;
+          color: #fff;
+          opacity: 0.8;
+        }
+      }
+
+    }
+  }
+}
