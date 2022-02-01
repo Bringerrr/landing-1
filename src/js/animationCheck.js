@@ -12,7 +12,7 @@
             let element = elements[i];
             let positionFromTop = elements[i].getBoundingClientRect().top;
 
-            if (positionFromTop - windowHeight <= 0) {
+            if (positionFromTop - windowHeight <= -300) {
                 element.classList.add('animate');
                 element.classList.remove('hidden');
             }

@@ -54,7 +54,7 @@ const modalOpen = () => {
     modalContainer.classList.remove("drawerOpened");
 }
 
-const closeModal = (EO) => {
+const closeModal = () => {
     body.style.overflow = ""
 
     mainBlock.classList.remove("modalOpened");
@@ -83,7 +83,3 @@ back.addEventListener('click', closeModalBackground)
 
 closeModalDrawerIcon.addEventListener('click', closeModal)
 burger.addEventListener('click', drawerOpen)
-
-// drawerOpen()
-
-

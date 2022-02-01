@@ -42,6 +42,11 @@
   font-weight: 800;
   font-size: 60px;
   line-height: 60px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 36px;
+    line-height: 50px;
+  }
 }
 
 @mixin h2-32-46 {
@@ -49,6 +54,11 @@
   font-weight: 800;
   font-size: 32px;
   line-height: 46px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 28px;
+    line-height: 46px;
+  }
 }
 
 @mixin h3-24-33 {
@@ -56,6 +66,11 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 @mixin subtitle-26-37 {
@@ -63,6 +78,11 @@
   font-weight: normal;
   font-size: 26px;
   line-height: 37px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 16px;
+    line-height: 32px;
+  }
 }
 
 @mixin subtitle-24-33 {
@@ -70,6 +90,11 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 33px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 @mixin content-24-33 {
@@ -77,6 +102,11 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 33px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 @mixin content-18-32 {
@@ -112,18 +142,6 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
-}
-
-@keyframes fadeIn {
-    from{
-      opacity: 0;
-    }
-    to{
-      opacity: 1;
-    }
-}
-@mixin fadeInLeftAnimation {
-  animation: fadeIn 6s;
 }
 
 
