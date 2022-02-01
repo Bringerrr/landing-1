@@ -383,6 +383,39 @@ body{
 // second section ----------------
 
 .secondSection{
+
+ 
+      .__first {
+        &.animate{
+          .image{
+            @include leftPhoneFadeAnimation;
+            }
+            .header, .subtitle{
+              @include rightDrawTextAnimation;
+            }
+    
+            &:before{
+              @include backgroundAnimate1;
+            }
+        }
+      }
+
+      .__second {
+        &.animate{
+          .image{
+            @include rightPhoneFadeAnimation;
+          }
+
+          .header, .subtitle{
+            @include leftDrawTextAnimation;
+          }
+  
+          &:before{
+            @include backgroundAnimate1;
+          }
+        }
+      }
+
   .block{
     width: 100%;
     position: relative;
@@ -473,9 +506,6 @@ body{
           } 
         }
 
-        &.animate{
-          @include leftPhoneFadeAnimation;
-        }
       }
 
       &:before{
@@ -486,16 +516,6 @@ body{
         }
 
         background: linear-gradient(90deg, #6DC8C2 0%, #F9F586 100%);
-      }
-
-      &.animate {
-        .header, .subtitle{
-          @include rightDrawTextAnimation;
-        }
-
-        &:before{
-          @include backgroundAnimate1;
-        }
       }
 
 
@@ -516,10 +536,6 @@ body{
           } 
         }
 
-        &.animate{
-          @include rightPhoneFadeAnimation;
-        }
-
         @media (max-width: 1300px) {
           top: -33px;
           @media (max-width: 860px) {
@@ -537,17 +553,6 @@ body{
 
         @media (max-width: 860px) {
           right:auto;
-        }
-
-      }
-
-      &.animate {
-        .header, .subtitle{
-          @include leftDrawTextAnimation;
-        }
-
-        &:before{
-          @include backgroundAnimate1;
         }
       }
 
