@@ -86,7 +86,7 @@ body{
 }
 
 .inputDefault{
-  @include subtitle-24-33;
+  @include content-24-33;
   border: 1px solid #4AD4CB;
   box-sizing: border-box;
   border-radius: 6px;
@@ -260,6 +260,23 @@ body{
           }
         }
       }
+
+      @media (max-width: 650px) {
+      
+        .formSubscription{
+          height: auto;
+          flex-direction: column;
+
+          .inputDefault{
+            width: 100%;
+          }
+
+          .button{
+            margin-top: 16px;
+          }
+        }
+      }
+
     }
 
     .image{
@@ -466,6 +483,9 @@ body{
         &::before{
           top: 130px;
           height: 428px;
+          @media (max-width: 540px) {
+            height: 328px;
+          }
         }
     }
 
@@ -602,6 +622,10 @@ body{
         }
       }
     }
+
+    @media (max-width: 1020px) {
+      margin-bottom: 100px;
+    }
     
   }
 }
@@ -610,6 +634,8 @@ body{
 
 .scrollSection{
   margin-bottom: 240px;
+  // overflow: hidden;
+
   .block {
     position: relative;
     display: flex;
@@ -622,13 +648,17 @@ body{
       max-width: 680px;
       top: 200px;
 
+      .image.mobile{
+        display: none;
+      }
+
       @media (min-width: 1600px) {
         img, svg {
           height: 760px
         } 
       }
 
-      @media (max-width: 1000px) { 
+      @media (max-width: 1020px) { 
         width: 100%;
 
         .scrollBackground{
@@ -686,18 +716,47 @@ body{
       .scrollBlock{
         min-height: 400px;
       }
+
+      .subtitle{
+        margin-bottom: 40px;
+      }
     }
 
   }
 
   @media (max-width: 1020px) {
+    margin-bottom: 40px;
+
+
     .block{
-      flex-direction: column;
+      padding-top: 48px;
+
+      .__scrollTextContainer{
+        padding-bottom: 10px;
+      }
 
       .scrollSticky{
+        height: 500px ;
+        width: 0px;
+        margin-bottom: 100px;
+        background-color: red;
+
         .scrollBackground{
-          left: 0;
+          left: -32px;
+          top: -40px;
+          // bottom: 30px;
+          width: 100vw !important;
+          height: 580px;
         }
+      }
+
+      .textBlockSecond {
+        padding-top:0;
+      }
+
+      .scrollBlock{
+        min-height: auto !important;
+        margin-bottom: 100px;
       }
 
       .image{
@@ -705,6 +764,27 @@ body{
         top: -130px;
       }
     }
+  }
+
+  @media (max-width: 1020px) { 
+
+    .scrollSticky{
+
+      .image.notMobile{
+        display: none;
+      }
+      
+      .image.mobile{
+        display: block !important;
+        position: relative;
+        left: calc(100% - 140px);
+      }
+    }
+
+    .textBlockSecond{
+      width: 100%;
+    }
+
   }
 }
 
@@ -846,7 +926,7 @@ body{
           &.__review1{
             top: 60px;
             .reviewImg{
-              bottom: 180px;
+              bottom: 160px;
               right: 100px;
             }
           }
@@ -959,7 +1039,10 @@ body{
 
     .formSubscription{
       flex-direction: column;
-      align-items: center;
+
+      @media (max-width: 860px) {
+        align-items: center;
+      }
 
       .inputDefault{
         margin-right: 0;
@@ -995,13 +1078,25 @@ body{
       .image{
         position: relative;
         left: initial;
+        width: 100%;
         img, svg{
           width: 380px;
+          @media (max-width: 500px) {
+            width: 100%;
+          }
         }
       }
     }
 
 
+  }
+
+  @media (max-width: 500px) {
+    .image{
+      img, svg{
+        width: 180px;
+      }
+    }
   }
 
 }
@@ -1023,6 +1118,10 @@ body{
         position: relative;
         display: flex;
         justify-content: space-between;
+
+        .footerContainer{
+          display: none;
+        }
 
         .imagesContainer{
           .socials{
@@ -1072,6 +1171,52 @@ body{
           background: linear-gradient(90deg, #6DC8C2 0%, #F9F586 100%);
           opacity: 0.3;
         }
+
+        // @media (max-width: 860px) { 
+        //   flex-direction: column;
+        // }
+
+        
+        @media (max-width: 860px) {
+            &>.navigation{
+              display: none;
+            }
+
+            &>.contacts{
+              display: none;
+            }
+
+            .footerContainer{
+              display: flex;
+              flex: 1 1;
+              flex-direction: column;
+              align-items: flex-end;
+
+              .navigation{
+                width: 360px;
+              }
+              .contacts{
+                width: 360px;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 40px;
+                span{
+                  margin-top: 0 !important;
+                }
+              }
+
+              @media (max-width: 650px) { 
+                .navigation{
+                  width: 300px;
+                }
+
+                .contacts{
+                  width: 340px;
+                }
+
+              }
+            }
+        }
       }
 
       .lowerContent{
@@ -1080,27 +1225,65 @@ body{
         justify-content: space-between;
 
         .navigation{
-          font-size: 14px;
+          @include footer-14-20;
           color: #fff;
           display: flex;
           opacity: 0.8;
           margin-left: 20px;
+          gap: 71px;
 
           span{
             cursor: pointer;
 
-            &:nth-child(n):not(:nth-child(1)){
-              margin-left: 71px;
-            }
+            // &:nth-child(n):not(:nth-child(1)){
+            //   margin-left: 71px;
+            // }
+
+          }
+
+          @media (max-width: 650px) { 
+            gap: 31px;
 
           }
         }
 
         .copyright{
-          font-size: 14px;
+          @include footer-14-20;
           color: #fff;
           opacity: 0.8;
         }
+      }
+
+      @media (max-width: 580px) { 
+        .upperContent{
+          flex-direction: column;
+
+          .footerContainer{
+            align-items: flex-start;
+
+            .navigation{
+              flex-direction: column;
+              gap: 24px;
+            }
+
+            .contacts{
+              flex-direction: column;
+              gap: 24px;
+              margin-bottom: 48px;
+            }
+          }
+        }
+
+        .lowerContent{
+          margin-top: 48px;
+          flex-direction: column;
+          .navigation{
+            flex-direction: column;
+            margin-left: 0;
+            margin-bottom: 48px;
+          }
+        }
+
       }
 
     }

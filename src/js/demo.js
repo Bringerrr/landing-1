@@ -15,11 +15,15 @@ const signInDrawerButton = document.getElementById('signInDrawerButton')
 const closeModalDrawerIcon = document.getElementById('closeModalDrawer')
 
 const onScroll = () => {
+    const width = window.innerWidth;
+    const turnedOff = width < 1020 ? true : false
+
     const section = document.getElementById('scrollSection')
     const image = section.getElementsByClassName('scrollBackground')[0]
     const scrollBlocks = section.getElementsByClassName('scrollBlock')
 
     const imagePos = image.getBoundingClientRect().top;
+
 
     for (let index = 0; index < scrollBlocks.length; index++) {
         const element = scrollBlocks[index];
@@ -27,16 +31,14 @@ const onScroll = () => {
         const elemHeight = element.offsetHeight
 
         const offsetTop = Math.abs(elemPos - imagePos);
-        const scaleValue = 1 - (0.2 * offsetTop) / elemHeight;
-        const opacityValue = 1 - (0.5 * offsetTop) / elemHeight;
+        const scaleValue = turnedOff ? 1 : 1 - (0.2 * offsetTop) / elemHeight;
+        const opacityValue = turnedOff ? 1 : 1 - (0.5 * offsetTop) / elemHeight;
 
         element.style.transform = `scale(${scaleValue})`;
         element.style.transformOrigin = 'right';
         element.style.opacity = opacityValue;
     }
 }
-
-
 
 const drawerOpen = () => {
     body.style.overflow = "hidden"
