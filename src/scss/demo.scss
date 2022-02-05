@@ -2,7 +2,8 @@ $desctopPadding: 104px;
 $tabletPadding: 32px;
 $mobilePadding: 20px;
 
-html{
+
+html, a{
   color: #333;
 }
 
@@ -1079,6 +1080,9 @@ body{
         position: relative;
         left: initial;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        
         img, svg{
           width: 380px;
           @media (max-width: 500px) {

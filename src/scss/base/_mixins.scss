@@ -49,6 +49,31 @@
   }
 }
 
+@mixin h1-58-68 {
+  font-family: Opensans-extrabold, sans-serif;
+  font-weight: 800;
+  font-size: 58px;
+  line-height: 68px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 36px;
+    line-height: 50px;
+  }
+}
+
+@mixin h1-46-53 {
+  font-family: Opensans-extrabold, sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 53px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 36px;
+    line-height: 50px;
+  }
+}
+
+
 @mixin h2-32-46 {
   font-family: Opensans-extrabold, sans-serif;
   font-weight: 800;
@@ -58,6 +83,18 @@
   @media (max-width: $mobileBrakepoint) { 
     font-size: 28px;
     line-height: 46px;
+  }
+}
+
+@mixin h3-24-32 {
+  font-family: Opensans-extrabold, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+
+  @media (max-width: $mobileBrakepoint) { 
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 
@@ -123,6 +160,13 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
+}
+
+@mixin stepper-16-24 {
+  font-family: Opensans-normal, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 @mixin footer-14-25 {
