@@ -5,7 +5,7 @@
 
 
         .mainBlock{
-            margin-top: 200px;
+            margin-top: 185px;
             
             @media (max-width: 1300px) {
                 margin-top: 60px;
@@ -36,13 +36,18 @@
 
             .image{
                 &.__main{
-                    top: 0;
+                    top: -80px;
                 }
             }
 
             @media (max-width: 860px) {
                 .description{
                     margin-top: 28px;
+                }
+                .image{
+                    &.__main{
+                        top: 0px;
+                    }
                 }
             }
         }
